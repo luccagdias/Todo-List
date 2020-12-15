@@ -52,7 +52,9 @@ function deleteOrCheck(event) {
     if (item.classList[0] === 'trash-btn') {
         const todo = item.parentElement;
         todo.classList.add('fall');
-        //todo.remove();
+        todo.addEventListener('transitionend', function() {
+            todo.remove();
+        });
     }
 
     //Check mark
